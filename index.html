@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>增強你的滑鼠掌控度</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v12.0&appId=199623575670292&autoLogAppEvents=1" nonce="PflWdl9r"></script>
+</head>
+<body>
+    <main>
+        <h1>點擊標靶遊戲</h1>
+        <h3>遊戲說明:按下開始遊戲後遊戲範圍內會出現圓圈<br>消失前點擊成功獲得1分，失敗不扣分</h3>
+        <div class="speed">
+            遊戲速度
+            <select id="userSpeed">
+                <option value="1000" selected>1000</option>
+                <option value="500">500</option>
+                <option value="300">300</option>
+            </select>毫秒
+            遊戲時間
+            <select id="userTime">
+                <option value="60">60</option>
+                <option value="120">120</option>
+                <option value="30">30</option>
+                <option value="10">10</option>
+            </select>
+            秒
+        </div>
+        <h4 id="gameTime">遊戲剩餘時間:未開始</h4>
+        <div class="fraction">已獲得分數:<span id="s1">0</span>漏掉了<span id="s2">0</span>個</div>
+        <ul class="game" id="game">
+            <li class="game_li" id="click1"></li>
+            <li class="game_li" id="click2"></li>
+            <li class="game_li" id="click3"></li>
+            <li class="game_li" id="click4"></li>
+            <li class="game_li" id="click5"></li>
+            <div class="view" id="view">
+
+            </div>
+        </ul>
+        <div class="btn">
+            <button id="gameBtn" title="開始遊戲">開始遊戲</button>
+            <button id="copyView">複製戰績</button>
+        </div>
+
+        <div class="fb_msg">
+            <div class="fb-comments" data-href="https://ayvc0420.github.io/targetGame/" data-width="380" data-numposts="5"></div>
+        </div>
+    </main>
+    <script src="js/javascript.js"></script>
+    <footer>
+        <p>建議使用桌上型電腦滑鼠設備進行本遊戲，可以增強對滑鼠的掌控度</p>
+        <p>遊戲範圍為400x400，遊玩前請先確定設備解析度是否符合大小</p>
+        <p>本網站使用JavaScript ES6技術不支援IE瀏覽器<br>Copyright &copy; ayvc0420</p>
+    </footer>
+</body>
+</html>

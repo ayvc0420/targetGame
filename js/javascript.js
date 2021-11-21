@@ -144,7 +144,7 @@
             view.innerHTML =
             `
                 <span>挑戰的是${lv}<br>遊戲時間:${time}秒<br>
-                <span>您的得分數為<span style="color:red">${clickSuccess}</span>分，漏掉了<span style="color:red">${clickFail}</span>分<br><span>
+                <span>您的得分數為<span style="color:red">${clickSuccess}</span>分，漏掉了<span style="color:red">${clickFail}</span>次<br><span>
             `
             if(clickFail === 1){
                 view.innerHTML +=`<span style="margin-top: 15px;">漏掉一分太可惜了<br>再挑戰一次?</span>`

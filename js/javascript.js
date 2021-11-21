@@ -122,7 +122,7 @@
             if(gameNumber === 1){
                 clearInterval(cycle1)
             }
-            if(gameNumber === 0){
+            if(gameNumber === -2){
                 gameTime.innerHTML = `時間到!!`
                 clearInterval(cycle2)
                 setTimeout(()=>{

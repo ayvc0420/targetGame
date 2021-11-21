@@ -66,8 +66,9 @@ main>h4{
     background-color: rgb(245, 152, 136);
     cursor: pointer;
     margin: 0 3px;
-    padding: 8px 10px ;
+    padding: 12px 15px ;
     transition: all .3s;
+    border-radius: 6px;
 }
 .btn>button:hover{
     filter: brightness(120%);
@@ -80,6 +81,9 @@ main>h4{
     display: inline-block;
     font-weight: 500;
 }
+.view>span>span{
+    margin-top: 15px;
+}
 .speed{
     display: flex;
     margin: 5px 0;
@@ -89,16 +93,19 @@ main>h4{
     display: flex;
     letter-spacing: 0.6px;
 }
+select{
+    cursor: pointer;
+}
 #copyView{
     display: none;
 }
 
 .game_li{
     position: absolute;
-    top: 42px;
-    left: 34px;
-    width: 25px;
-    height: 25px;
+    top: 35px;
+    left: 42px;
+    width: 0px;
+    height: 0px;
     border: 1px solid red;
     /* box-shadow: 0 0 2px 2px rgb(0, 0, 0); */
     border-radius: 50%;

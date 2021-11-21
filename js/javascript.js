@@ -12,8 +12,8 @@
     const view = document.getElementById('view')
     const copyView = document.getElementById('copyView')
     // 遊戲畫面
-    let gameWidth = 400;
-    let gameHeight = 400;
+    let gameWidthPx = window.getComputedStyle(game,null).width
+    let gameWidth = (parseInt(gameWidthPx,10))
     
     // // 遊戲剩餘時間
     // let gameNumber = 60;
@@ -150,7 +150,7 @@
             `
             if(clickFail === 1){
                 view.innerHTML +=`<span style="margin-top: 15px;">漏掉一分太可惜了<br>再挑戰一次?</span>`
-            }else if(clickFail === 0 && lv !== '地獄級'){
+            }else if(clickFail === 0 && lv !== '地獄級' && lv !== '高手級'){
                 view.innerHTML +=`<span style="margin-top: 15px;">實力不錯!一次都沒漏掉</span>`
             }
             if(lv === '高手級'){

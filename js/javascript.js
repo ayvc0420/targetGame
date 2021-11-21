@@ -72,7 +72,6 @@
             let t = n(gameWidth)
             let l = n(gameWidth)
             function n (max){
-                // min = Math.floor(min);
             max = Math.floor(max) -25;
             return Math.floor(Math.random() * (max - 0 + 1 ) + 0);
             }
@@ -114,11 +113,10 @@
             target.style.display = 'none';
         }
 
-        // let gameNumber = 3;
         let gameNumber = time;
         let s = function(){
             gameNumber--;
-            gameTime.innerHTML = `遊戲剩餘時間:${gameNumber+1}`
+            gameTime.innerHTML = `遊戲剩餘時間:${gameNumber+1}秒`
             if(gameNumber === 1){
                 clearInterval(cycle1)
             }

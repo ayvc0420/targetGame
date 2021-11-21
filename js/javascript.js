@@ -31,35 +31,44 @@
         clickFail = 0;
         s1.textContent = 0;
         s2.textContent = 0;
+        document.querySelector('.speed').style.display = 'none';
 
         // game.textContent = '';
         // 使用者選擇遊戲速度
         const userSpeed = document.getElementById('userSpeed').value
         // 使用者選擇時間
         const userTime = document.getElementById('userTime').value
+        // 使用者選擇圓圈大小
+        const userRound = document.getElementById('userRound').value
         const speed = parseInt(userSpeed,10)
         const time = parseInt(userTime,10) 
+        const round = parseInt(userRound,10)
         const speedFor = [speed,speed*2,speed*3,speed*4,speed*5]
         let start = function(){
             setTimeout(() => {
                 switchPosition(click1)
                 switchView(click1)
+                switchRound(click1)
             }, speedFor[0]);
             setTimeout(() => {
                 switchPosition(click2)
                 switchView(click2)
+                switchRound(click2)
             }, speedFor[1]);
             setTimeout(() => {
                 switchPosition(click3)
                 switchView(click3)
+                switchRound(click3)
             }, speedFor[2]);
             setTimeout(() => {
                 switchPosition(click4)
                 switchView(click4)
+                switchRound(click4)
             }, speedFor[3]);
             setTimeout(() => {
                 switchPosition(click5)
                 switchView(click5)
+                switchRound(click5)
             }, speedFor[4]);
 
 
@@ -72,7 +81,7 @@
             let t = n(gameWidth)
             let l = n(gameWidth)
             function n (max){
-            max = Math.floor(max) -25;
+            max = Math.floor(max) -40;
             return Math.floor(Math.random() * (max - 0 + 1 ) + 0);
             }
             target.style.top = `${t}px`;
@@ -89,6 +98,15 @@
                     target.style.display = 'none';
                 }
             },1000)
+        }
+        function switchRound(target){
+            target.style.width = `${round}px`
+            target.style.height = `${round}px`
+            if(round === 25){
+                target.style.fontSize = `10px`
+            }else if(round === 40){
+                target.style.fontSize = `26px`
+            }
         }
 
         click1.addEventListener('click',() => {
@@ -123,6 +141,7 @@
             if(gameNumber === -2){
                 gameTime.innerHTML = `時間到!!`
                 clearInterval(cycle2)
+                view.innerHTML = '計算中...'
                 setTimeout(()=>{
                     gameEnd()
                 },3000)
@@ -143,8 +162,8 @@
             }
             view.innerHTML =
             `
-                <span>挑戰的是${lv}<br>遊戲時間:${time}秒<br>
-                <span>您的得分數為<span style="color:red">${clickSuccess}</span>分，漏掉了<span style="color:red">${clickFail}</span>次<br><span>
+                <span>您挑戰的是${lv}速度<br>遊戲時間:${time}秒<br>尺寸大小:${round}<br>
+                <span>得分數為<span style="color:red">${clickSuccess}</span>分<br>一共漏掉了<span style="color:red">${clickFail}</span>次<br><span>
             `
             if(clickFail === 1){
                 view.innerHTML +=`<span style="margin-top: 15px;">漏掉一分太可惜了<br>再挑戰一次?</span>`
@@ -171,6 +190,7 @@
             }
             gameBtn.style.display='block';
             copyView.style.display = 'block';
+            document.querySelector('.speed').style.display = 'flex';
             gameBtn.textContent = '重新遊玩';
             copyView.addEventListener('click',function(){
                 window.getSelection().selectAllChildren(view);

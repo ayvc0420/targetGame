@@ -15,10 +15,17 @@
                 if(this.msg >= 10){
                     window.location.href=`./1.html`;
                 }else{
-                    window.location.href=`./${this.msg+1}.html`;
+                    window.location.href=`./${this.targetNumber}.html`;
                 }
             },3000)
         },
+        computed:{
+            targetNumber(){
+                const min = 1;
+                const max = 10;
+                return Math.floor(Math.random() * (max - min +1) + min);
+            }
+        }
     }
     new Vue({
         el:'#piMain',

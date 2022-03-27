@@ -1,0 +1,6 @@
+#piMain>div>div:nth-of-type(odd){
+    background-color: rgb(8, 70, 0);
+}
+#piMain>div>div:nth-of-type(even){
+    background-color: rgb(77, 0, 57);
+}

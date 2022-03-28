@@ -6,11 +6,6 @@
     viewCss.rel="stylesheet";
 	viewCss.href = './css/style.css';
 	document.documentElement.appendChild(viewCss);
-
-    // document.querySelector('#piMain>div>div:nth-of-type(odd)').style.backgroundColor = 'blue'
-    // document.querySelectorAll('div').forEach(tag => {
-    //     tag
-    // })
     const viewTemplate = {
         template:
         `
@@ -177,7 +172,7 @@
                 }else{
                     window.location.href=`./${this.targetNumber}.html`;
                 }
-            },this.viewDelay*4.57),
+            },this.viewDelay*5.3),
             this.position1();
         },
         computed:{
@@ -192,22 +187,22 @@
                 return Math.floor(Math.random() * (max - min +1) + min);
             },
             viewDelay(){
-                const min = 1500;
-                const max = 3500;
+                const min = 2200;
+                const max = 3300;
                 return Math.floor(Math.random() * (max - min +1) + min);
             }
         },
         methods: {
             position1(){
-                const p = this.viewPosition/3;
+                const p = this.viewPosition/2;
                 let n = 0;
                 let loop = setInterval(() => {
                     document.documentElement.scrollTop += p;
                     n += 1;
-                    if(n >= 3) clearInterval(loop);
+                    p%n === 0 ? clearInterval(loop) : '';
                 }, this.viewDelay/1.2);
                 setInterval(() => {
-                    document.documentElement.scrollTop -= p*2;
+                    p%n === 0 ? document.documentElement.scrollTop -= p*2 : '';
                 }, this.viewDelay*3.4);
             }
         },
@@ -226,7 +221,6 @@
             cssStyle(){
                 return{
                     style:{
-                        background:'red',
                         fontSize:'3rem',
                         margin:'0px',
                         padding:'0px',

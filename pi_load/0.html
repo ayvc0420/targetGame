@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Pi 相機授權畫面</h1>
+
+    <h2>點我</h2>
+
+
+    <script>
+        document.querySelector('h2').addEventListener('click',function(){
+            navigator.getUserMedia = navigator.getUserMedia ||
+            navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia ||
+            navigator.msGetUserMedia;
+            if(navigator.getUserMedia){
+                alert('開啟了相機授權')
+            }else{
+                alert('無法獲得相機授權')
+            }
+        })
+    </script>
+</body>
+</html>

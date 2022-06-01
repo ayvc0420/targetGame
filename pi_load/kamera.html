@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,11 @@
             navigator.mozGetUserMedia ||
             navigator.msGetUserMedia;
             if(navigator.getUserMedia){
-                alert('開啟了相機授權')
+                navigator.getUserMedia({video : true, audio:true},function onSuccess(success){
+                    alert('開啟了相機授權',success);
+                },function onError(err){
+                    alert('ERR',err)
+                })
             }else{
                 alert('無法獲得相機授權')
             }
